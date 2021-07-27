@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    
+    </head>
+    <body>
+ <div class="page-width">
+   <div class="info">Tap the box to choose your color, then click copy and return to the design brief</div>
+        <div class="colorwrap">
+        <input type="color" id="myInput" name="favcolor" value="#ff0000">
+        <p id="result"></p>
+        </div>
+        <button onclick="myFunction()">Copy Color</button>
+        </div>
+        <script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  document.execCommand("copy");
+  alert("Copied the Color: " + copyText.value);
+}
+let colorInput = document.querySelector('#myInput'),
+res = document.getElementById("result");
+res.innerHTML = colorInput.value;
+colorInput.addEventListener('input',function() {
+    res.innerHTML = colorInput.value;
+}, false); 
+
+        </script>
+    </body> 
+    </html>
