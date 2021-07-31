@@ -15,10 +15,9 @@
         </div>
         <script>
 function myFunction() {
-  var copyText = document.getElementById("myInput");
-  copyText.select();
-  document.execCommand("copy");
-  alert("Copied the Color: " + copyText.value);
+  var copyText = document.getElementById("myInput").value;
+  //copyText.select();
+  navigator.clipboard.writeText(copyText)
 }
 let colorInput = document.querySelector('#myInput'),
 res = document.getElementById("result");
